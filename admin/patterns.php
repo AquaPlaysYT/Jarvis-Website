@@ -288,7 +288,7 @@ input[type=text] {
               $ch = curl_init();
               curl_setopt_array($ch, array(
                   CURLOPT_URL            => $url, 
-                  CURLOPT_HTTPHEADER     => array('Authorization: Bot NjU3NzMzMDA0NTg3Njk2MTQ4.XvsYUg.80l_8S7w5UshHixuBxEUsjdThRc'), 
+                  CURLOPT_HTTPHEADER     => array('Authorization: Bot token'), 
                   CURLOPT_RETURNTRANSFER => 1,
                   CURLOPT_FOLLOWLOCATION => 1,
                   CURLOPT_VERBOSE        => 1,
@@ -362,7 +362,7 @@ input[type=text] {
         $ch = curl_init();
         curl_setopt_array($ch, array(
           CURLOPT_URL            => $url, 
-          CURLOPT_HTTPHEADER     => array('Authorization: Bot NjU3NzMzMDA0NTg3Njk2MTQ4.XvsYUg.80l_8S7w5UshHixuBxEUsjdThRc'), 
+          CURLOPT_HTTPHEADER     => array('Authorization: Bot token'), 
           CURLOPT_RETURNTRANSFER => 1,
           CURLOPT_FOLLOWLOCATION => 1,
           CURLOPT_VERBOSE        => 1,
