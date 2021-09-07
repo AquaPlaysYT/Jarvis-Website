@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 30%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+    
+<center>
+<div class="slidecontainer">
+  <h2>Mood Slider Dev-Test</h2>
+  <input type="range" min="-1" max="1" step="0.000000000000001" class="slider" id="myRange">
+  <p>Value: <span id="demo"></span></p>
+  <p>Mood: <span id="mood"></span></p>
+</div>
+</center>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+var mood = document.getElementById("mood");
+
+output.innerHTML = slider.value;
+mood.innerHTML = "Unkown";
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  if (slider.value > -1 && slider.value < -0.35) {
+    console.log("between -1 and -0.5");
+    slider.style.background="red";
+    mood.innerHTML = "Negative";
+  }
+  else if (slider.value > -0.35 && slider.value < 0.35) {
+    console.log("between -0.5 and 0.5");
+    slider.style.background="orange";
+    mood.innerHTML = "Neutral";
+  }
+  else if (slider.value > 0.35 && slider.value < 1) {
+    console.log("between 0.5 and 1");
+    slider.style.background="green";
+    mood.innerHTML = "Positive";
+  }
+}
+</script>
+
+</body>
+</html>
